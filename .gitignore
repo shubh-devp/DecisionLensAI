@@ -1,0 +1,55 @@
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+
+# Virtual environments. backend/venv/ is large, machine-specific and full of
+# Windows binaries, so it must never be committed.
+venv/
+.venv/
+env/
+ENV/
+
+# ---------------------------------------------------------------------------
+# Python tooling caches and coverage
+# ---------------------------------------------------------------------------
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+
+# ---------------------------------------------------------------------------
+# Node / frontend
+# ---------------------------------------------------------------------------
+node_modules/
+dist/
+.vite/
+
+# ---------------------------------------------------------------------------
+# Logs
+# ---------------------------------------------------------------------------
+*.log
+
+# ---------------------------------------------------------------------------
+# Environment files
+#
+# Never commit a real .env — it holds the LLM provider key. The .env.example
+# templates contain no secrets and ARE meant to be committed, so they are
+# explicitly re-included after the wildcard rule below.
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# ---------------------------------------------------------------------------
+# Editors / OS
+# ---------------------------------------------------------------------------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

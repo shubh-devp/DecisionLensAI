@@ -1,0 +1,9 @@
+# Production dependencies, installed by the hosting platform from the project
+# root (the root is where a platform looks by default).
+#
+# Local development installs backend/requirements.txt instead — the same list
+# without gunicorn, which is only needed to serve the app in production.
+Flask>=3.0
+Flask-Cors>=4.0
+pandas>=2.0
+gunicorn>=21.0
