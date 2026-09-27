@@ -1648,27 +1648,29 @@ function App() {
                 </div>
 
                 <Warnings warnings={insights.warnings} />
-
-                <button
-                  type="button"
-                  onClick={handleRecommendations}
-                  disabled={isGeneratingRecommendations}
-                  className="mt-6 rounded-lg bg-cyan-500 px-5 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400 disabled:cursor-not-allowed disabled:opacity-50"
-                >
-                  {isGeneratingRecommendations
-                    ? 'Generating...'
-                    : 'Generate Recommendations'}
-                </button>
               </>
             )}
           </section>
         )}
 
-        {(recommendations || recommendationsError || isGeneratingRecommendations) && (
+        {(evidence || recommendations || recommendationsError || isGeneratingRecommendations) && (
           <section className="mt-12 rounded-xl border border-slate-800 bg-slate-900 p-6">
             <h2 className="text-sm font-semibold uppercase tracking-widest text-slate-400">
               Step 5 &mdash; Recommendations
             </h2>
+
+            {evidence && (
+              <button
+                type="button"
+                onClick={handleRecommendations}
+                disabled={isGeneratingRecommendations}
+                className="mt-4 rounded-lg bg-cyan-500 px-5 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                {isGeneratingRecommendations
+                  ? 'Generating...'
+                  : 'Generate Recommendations'}
+              </button>
+            )}
 
             {isGeneratingRecommendations && (
               <InlineStatus>Building recommendations from the evidence...</InlineStatus>
